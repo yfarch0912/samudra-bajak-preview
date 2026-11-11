@@ -226,6 +226,67 @@ body.opened #btnMusic{display:flex}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
   .rv{opacity:1;transform:none}
 }
+
+/* ===== BESPOKE: JURNAL KAPTEN & PETA HARTA (2026-11-12) ===== */
+.rock-bg{position:absolute;inset:-3% -2%;transform-origin:50% 88%;animation:sceneRock 9.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes sceneRock{from{transform:rotate(-.85deg) translateY(0)}to{transform:rotate(.85deg) translateY(-7px)}}
+.rock-fg{animation:counterRock 9.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes counterRock{from{transform:rotate(.55deg) translateY(-2px)}to{transform:rotate(-.55deg) translateY(3px)}}
+.cloud-drift{position:absolute;pointer-events:none;opacity:.92;animation:cloudDrift 34s cubic-bezier(.37,0,.63,1) infinite alternate}
+.cloud-drift.cd2{animation-duration:44s;animation-delay:-18s;opacity:.75}
+.cloud-drift.cd3{animation-duration:27s;animation-delay:-9s;opacity:.6}
+@keyframes cloudDrift{from{transform:translateX(-16px)}to{transform:translateX(22px)}}
+.star-night{position:absolute;pointer-events:none;animation:starTwinkle var(--sd,3.2s) cubic-bezier(.37,0,.63,1) infinite alternate;animation-delay:var(--sdl,0s)}
+@keyframes starTwinkle{from{opacity:.25;transform:scale(.7) rotate(0deg)}to{opacity:1;transform:scale(1.12) rotate(20deg)}}
+.boat-bob{position:absolute;pointer-events:none;animation:boatBob 6.4s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes boatBob{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-9px) rotate(2.2deg)}}
+.coin-spin{position:absolute;pointer-events:none;animation:coinSway 7s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes coinSway{from{transform:rotate(-7deg) translateY(0)}to{transform:rotate(7deg) translateY(-5px)}}
+.treasure-map{position:relative;width:min(238px,72%);margin-top:16px;animation:fadeUp 1s 4.05s ease both}
+.treasure-map .map-unroll{animation:mapUnroll 1.9s cubic-bezier(.22,.8,.3,1) 4.7s both}
+@keyframes mapUnroll{from{clip-path:inset(4% 47% 4% 47%);transform:scale(.82);opacity:.4}to{clip-path:inset(0 0 0 0);transform:scale(1);opacity:1}}
+.treasure-map img{width:100%;filter:drop-shadow(0 12px 22px rgba(5,15,24,.55))}
+.x-pulse{position:absolute;left:71%;top:44%;width:30px;height:30px;margin:-15px -15px 0 0;color:#ffd968;font-family:'Playfair Display',serif;font-weight:900;font-size:30px;line-height:30px;text-align:center;text-shadow:0 0 12px rgba(255,190,60,.95),0 2px 6px rgba(90,40,0,.8);animation:xPulse 1.8s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes xPulse{from{transform:scale(.82);opacity:.75}to{transform:scale(1.22);opacity:1}}
+.map-cap{margin-top:5px;font-size:10px;letter-spacing:.3em;color:#ffe9b8;font-weight:700;background:rgba(13,36,56,.6);display:inline-block;padding:4px 11px;border-radius:999px;border:1px solid rgba(238,217,164,.5)}
+.log-stamp{display:inline-flex;align-items:center;gap:8px;font-size:9.5px;font-weight:800;letter-spacing:.26em;color:#fff6d8;background:linear-gradient(135deg,#7a3b1e,#a8542a);border:1.5px dashed rgba(255,230,180,.85);border-radius:8px;padding:6px 11px 5px;transform:rotate(-1.6deg);box-shadow:0 5px 14px rgba(90,40,10,.35);margin-bottom:10px;animation:stampSway 6.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes stampSway{from{transform:rotate(-2.1deg) translateY(0)}to{transform:rotate(-1.1deg) translateY(-2px)}}
+.rope-div{height:10px;margin:14px auto 0;width:min(230px,80%);border-radius:99px;background:repeating-linear-gradient(55deg,#a87c3e 0 9px,#8a5f27 9px 18px);box-shadow:inset 0 2px 3px rgba(255,240,200,.55),inset 0 -2px 3px rgba(60,35,5,.5),0 3px 7px rgba(90,60,20,.3);opacity:.95}
+.journal-card{position:relative}
+.journal-card::after{content:"";position:absolute;top:12px;bottom:12px;left:9px;width:0;border-left:2px dashed rgba(143,113,54,.5);pointer-events:none}
+/* countdown roda kemudi */
+.wheel-wrap{position:relative;width:308px;max-width:88vw;height:308px;margin:2px auto 10px}
+.wheel-spin{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.96;filter:drop-shadow(0 16px 30px rgba(8,26,41,.4));animation:wheelSpin 72s linear infinite}
+@keyframes wheelSpin{to{transform:rotate(360deg)}}
+.wheel-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:104px;height:104px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2e5a74,#0d2438 72%);border:2px solid var(--brass-l);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--brass-l);box-shadow:inset 0 0 0 4px rgba(238,217,164,.18),0 8px 20px rgba(8,26,41,.4);animation:hubBreath 5s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes hubBreath{from{transform:translate(-50%,-50%) scale(1)}to{transform:translate(-50%,-50%) scale(1.045)}}
+.wheel-hub b{font-family:'Playfair Display',serif;font-size:19px;letter-spacing:.04em}
+.wheel-hub span{font-size:8px;letter-spacing:.24em;color:#bcd6dd}
+.wheel-wrap .countdown{position:absolute;inset:0;display:block;margin:0}
+.wheel-wrap .cd-box{position:absolute;width:64px;height:64px;max-width:none;border-radius:50%;padding:10px 0 0;flex:none}
+.wheel-wrap .cd-box b{font-size:21px}
+.wheel-wrap .cd-box span{font-size:8px}
+.cd-pos-t{left:50%;top:0;transform:translateX(-50%)}
+.cd-pos-r{right:0;top:50%;transform:translateY(-50%)}
+.cd-pos-b{left:50%;bottom:0;transform:translateX(-50%)}
+.cd-pos-l{left:0;top:50%;transform:translateY(-50%)}
+/* love story rute peta */
+.route-map{background:linear-gradient(180deg,#f3e5c3,#ecdcae);border:2px solid rgba(143,113,54,.75);border-radius:18px;padding:16px 14px 10px;margin-bottom:22px;box-shadow:0 14px 30px rgba(90,60,20,.3),inset 0 0 42px rgba(168,124,62,.28);position:relative;overflow:hidden}
+.route-map .rm-title{font-size:10px;font-weight:800;letter-spacing:.3em;color:#7a3b1e;text-align:center}
+.route-boat{position:absolute;top:34px;left:6%;width:52px;animation:routeSail 11s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes routeSail{from{transform:translateX(0) translateY(0) rotate(-2deg)}to{transform:translateX(215px) translateY(6px) rotate(2.5deg)}}
+.route-x{position:absolute;right:7%;bottom:16px;color:#c33d21;font-family:'Playfair Display',serif;font-weight:900;font-size:37px;text-shadow:0 0 14px rgba(255,170,60,.8);animation:xPulse 1.8s cubic-bezier(.37,0,.63,1) infinite alternate}
+.route-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:13.5px;color:#5c3a14}
+/* galeri fragmen & botol */
+.gal-rail figure.frag .port-frame{border-radius:14px 22px 12px 26px;border:2px solid #a87c3e;background:linear-gradient(160deg,#f7ecd4,#e8d5a5);transform:rotate(-1.2deg)}
+.gal-rail figure.frag:nth-child(3) .port-frame{transform:rotate(1.1deg)}
+.gal-rail figure.frag img{filter:sepia(.22) saturate(1.05)}
+.gal-rail figure.bottle .port-frame{border-radius:120px 120px 46% 46%/150px 150px 60px 60px;border:2.5px solid rgba(127,196,189,.9);background:linear-gradient(165deg,rgba(190,235,230,.55),rgba(110,180,190,.28) 55%,rgba(46,134,150,.35));animation:bottleBob 5.6s cubic-bezier(.37,0,.63,1) infinite alternate}
+.gal-rail figure.bottle:nth-child(4) .port-frame{animation-delay:-2.8s}
+.gal-rail figure.bottle img{border-radius:112px 112px 44% 44%/142px 142px 54px 54px;opacity:.94}
+@keyframes bottleBob{from{transform:translateY(0) rotate(-1.4deg)}to{transform:translateY(-8px) rotate(1.4deg)}}
+.frag-tag{display:inline-block;margin-top:8px;font-size:9.5px;font-weight:800;letter-spacing:.24em;color:#7a3b1e;background:rgba(247,236,212,.92);border:1px dashed rgba(143,113,54,.8);padding:4px 10px;border-radius:6px;transform:rotate(-1.4deg)}
+.bottle-tag{display:inline-block;margin-top:8px;font-size:9.5px;font-weight:800;letter-spacing:.24em;color:#fdf6e3;background:rgba(20,50,74,.88);border:1px solid rgba(127,196,189,.8);padding:4px 10px;border-radius:999px}
 </style>
 </head>
 <body>
@@ -234,20 +295,35 @@ body.opened #btnMusic{display:flex}
   <!-- ===== SAMPUL: LIVING SCENE SAMUDRA ===== -->
   <header id="cover" aria-label="Sampul undangan Samudra Bajak">
     <div class="scene">
+    <div class="rock-bg">
       <img class="lyr lyr-coverbg" src="assets/undangya/samudra-bajak/cover-bg.webp" alt="Lukisan satu kesatuan: kapal layar besar berlayar di laut tropis saat matahari terbenam oranye, pulau kelapa dan burung camar" width="860" height="1864">
       <img class="lyr palm" style="left:-4%;bottom:6%;width:34%;z-index:5" src="assets/undangya/samudra-bajak/palem.webp" alt="">
       <img class="lyr palm palm2" style="right:-5%;bottom:9%;width:27%;z-index:5" src="assets/undangya/samudra-bajak/palem.webp" alt="">
       <img class="lyr lantern-hang" style="right:7%;top:0;width:13%;z-index:6" src="assets/undangya/samudra-bajak/lentera.webp" alt="">
       <div class="flyx fx-a" style="top:16%"><img class="flyimg" style="width:15%" src="assets/undangya/samudra-bajak/icon-gull.webp" alt=""></div>
       <div class="flyx fx-b" style="top:26%"><img class="flyimg" style="width:11%;margin-left:auto" src="assets/undangya/samudra-bajak/icon-gull.webp" alt=""></div>
+      <img class="cloud-drift" style="left:4%;top:9%;width:34%" src="assets/undangya/samudra-bajak/awan-laut.webp" alt="">
+      <img class="cloud-drift cd2" style="right:2%;top:15%;width:27%" src="assets/undangya/samudra-bajak/awan-laut.webp" alt="">
+      <img class="cloud-drift cd3" style="left:16%;top:26%;width:20%" src="assets/undangya/samudra-bajak/awan-laut.webp" alt="">
+      <img class="star-night" style="left:10%;top:5%;width:16px;--sd:2.8s" src="assets/undangya/samudra-bajak/bintang-malam.webp" alt="">
+      <img class="star-night" style="left:30%;top:3%;width:11px;--sd:3.6s;--sdl:-1.4s" src="assets/undangya/samudra-bajak/bintang-malam.webp" alt="">
+      <img class="star-night" style="right:26%;top:4%;width:13px;--sd:3.1s;--sdl:-.7s" src="assets/undangya/samudra-bajak/bintang-malam.webp" alt="">
+      <img class="star-night" style="right:9%;top:8%;width:10px;--sd:2.5s;--sdl:-2s" src="assets/undangya/samudra-bajak/bintang-malam.webp" alt="">
+      <img class="star-night" style="left:48%;top:7%;width:9px;--sd:4s;--sdl:-2.6s" src="assets/undangya/samudra-bajak/bintang-malam.webp" alt="">
+      <img class="lyr lantern-hang" style="left:5%;top:1.5%;width:11%" src="assets/undangya/samudra-bajak/tali-simpul.webp" alt="">
+      <img class="boat-bob" style="left:6%;bottom:17%;width:21%" src="assets/undangya/samudra-bajak/perahu-kecil.webp" alt="">
+      <img class="coin-spin" style="right:8%;bottom:24%;width:11%" src="assets/undangya/samudra-bajak/koin-emas.webp" alt="">
+      <img class="coin-spin" style="left:12%;bottom:31%;width:8%;animation-delay:-3.4s" src="assets/undangya/samudra-bajak/koin-emas.webp" alt="">
       <div class="kilau-field" id="kilauCover" aria-hidden="true"></div>
       <div class="waves" aria-hidden="true"><div class="wave w1"></div><div class="wave w2"></div><div class="wave w3"></div></div>
+    </div>
       <div class="cover-shade"></div>
     </div>
     <div class="cover-ui">
       <div class="cover-kicker">THE WEDDING OF</div>
       <h1 class="cover-names"><span class="nm-line">Meyzsa</span><span class="amp">&amp;</span><span class="nm-line">Fahrezzi</span></h1>
       <div class="cover-date">SABTU · 12 JUNI 2027</div>
+      <div class="treasure-map rock-fg"><div class="map-unroll"><img src="assets/undangya/samudra-bajak/peta-gulung.webp" alt="Gulungan peta harta karun dengan rute putus-putus menuju tanda X emas"><span class="x-pulse" aria-hidden="true">✕</span></div><span class="map-cap">PETA HARTA · RUTE MENUJU HARI BAHAGIA</span></div>
       <div class="cover-spacer"></div>
       <div class="cover-guest">Kepada Yth. Bapak/Ibu/Saudara/i</div>
       <div class="gname" id="guestName">Tamu Undangan</div>
@@ -264,8 +340,8 @@ body.opened #btnMusic{display:flex}
       <div class="bg-tint">
         <div class="sec-head rv rv-drop head-glass">
           <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-compass.webp" alt="">
-          <div class="sec-kicker">DENGAN MEMOHON RAHMAT ALLAH SWT</div>
-          <h2 class="sec-title serif">Pelayaran Dimulai</h2>
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-1 · DERMAJA FAJAR</div><br><div class="sec-kicker">DENGAN MEMOHON RAHMAT ALLAH SWT</div>
+          <h2 class="sec-title serif">Pelayaran Dimulai</h2><div class="rope-div" aria-hidden="true"></div>
           <svg class="divider" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 6 H44 M76 6 H118" stroke="#c9a45c" stroke-width="1.4"/><path d="M60 1 L65 6 L60 11 L55 6 Z" fill="none" stroke="#c9a45c" stroke-width="1.4"/><circle cx="49" cy="6" r="1.8" fill="#d95f43"/><circle cx="71" cy="6" r="1.8" fill="#d95f43"/></svg>
         </div>
         <div class="card rv rv-flip" style="text-align:center">
@@ -283,8 +359,8 @@ body.opened #btnMusic{display:flex}
       <div class="bg-tint">
       <div class="sec-head rv rv-up head-glass">
         <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-wheel.webp" alt="">
-        <div class="sec-kicker">MEMPELAI</div>
-        <h2 class="sec-title serif">Nakhoda &amp; Penjaga Kompas</h2>
+        <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-7 · MEMPERKENALKAN AWAK HATI</div><br><div class="sec-kicker">MEMPELAI</div>
+        <h2 class="sec-title serif">Nakhoda &amp; Penjaga Kompas</h2><div class="rope-div" aria-hidden="true"></div>
         <p class="sec-sub">Dua mempelai yang berbahagia</p>
       </div>
       <div class="couple-grid">
@@ -316,9 +392,18 @@ body.opened #btnMusic{display:flex}
       <div class="bg-tint">
         <div class="sec-head rv rv-up head-glass">
           <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-bottle.webp" alt="">
-          <div class="sec-kicker">LOVE STORY</div>
-          <h2 class="sec-title serif">Empat Babak Pelayaran</h2>
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-40 · RUTE PETA HARTA</div><br><div class="sec-kicker">LOVE STORY</div>
+          <h2 class="sec-title serif">Empat Babak Pelayaran</h2><div class="rope-div" aria-hidden="true"></div>
           <p class="sec-sub">Catatan perjalanan dua hati menuju satu pelabuhan</p>
+        </div>
+        <div class="route-map rv rv-flip" role="img" aria-label="Peta rute cinta: dari Pelabuhan Pertama melintasi babak-babak pelayaran menuju X besar Harta Terbesar Hari Bahagia">
+          <div class="rm-title">PETA RUTE · DARI PELABUHAN PERTAMA MENUJU HARTA TERBESAR</div>
+          <svg viewBox="0 0 340 118" style="width:100%;display:block;margin-top:6px" aria-hidden="true"><path d="M18 92 C 80 40, 130 104, 185 62 S 285 30, 316 44" fill="none" stroke="#c33d21" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="1 11"/><circle cx="18" cy="92" r="6" fill="#2e8696" stroke="#fdf6e3" stroke-width="2.5"/><circle cx="112" cy="76" r="5" fill="#c9a45c" stroke="#fdf6e3" stroke-width="2.5"/><circle cx="196" cy="58" r="5" fill="#c9a45c" stroke="#fdf6e3" stroke-width="2.5"/><circle cx="262" cy="38" r="5" fill="#c9a45c" stroke="#fdf6e3" stroke-width="2.5"/></svg>
+          <img class="route-boat" src="assets/undangya/samudra-bajak/perahu-kecil.webp" alt="" aria-hidden="true">
+          <span class="route-label" style="position:absolute;left:12px;bottom:8px">Pelabuhan Pertama · 2019</span>
+          <span class="route-label" style="position:absolute;right:70px;bottom:34px;font-size:12px">Harta Terbesar:</span>
+          <span class="route-x" aria-hidden="true">✕</span>
+          <span class="route-label" style="position:absolute;right:8px;bottom:2px;font-size:12.5px">Hari Bahagia · 2027</span>
         </div>
         <div class="tl">
           <div class="tl-item rv rv-left"><span class="tl-dot"></span><div class="tl-card">
@@ -348,14 +433,18 @@ body.opened #btnMusic{display:flex}
       <div class="bg-tint">
         <div class="sec-head rv rv-up head-glass">
           <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-compass.webp" alt="">
-          <div class="sec-kicker">HITUNG MUNDUR</div>
-          <h2 class="sec-title serif">Menuju Hari Berlabuh</h2>
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-99 · TITIK X PENENTUAN</div><br><div class="sec-kicker">HITUNG MUNDUR</div>
+          <h2 class="sec-title serif">Menuju Hari Berlabuh</h2><div class="rope-div" aria-hidden="true"></div>
         </div>
-        <div class="countdown rv rv-zoom" id="countdown" data-target="2027-06-12T08:00:00+07:00" aria-label="Hitung mundur menuju akad nikah">
-          <div class="cd-box"><b id="cdD">0</b><span>Hari</span></div>
-          <div class="cd-box"><b id="cdH">0</b><span>Jam</span></div>
-          <div class="cd-box"><b id="cdM">0</b><span>Menit</span></div>
-          <div class="cd-box"><b id="cdS">0</b><span>Detik</span></div>
+        <div class="wheel-wrap rv rv-zoom">
+          <img class="wheel-spin" src="assets/undangya/samudra-bajak/icon-wheel.webp" alt="" aria-hidden="true">
+          <div class="wheel-hub"><b>12·06</b><span>2027 · TITIK X</span></div>
+          <div class="countdown" id="countdown" data-target="2027-06-12T08:00:00+07:00" aria-label="Hitung mundur menuju akad nikah">
+          <div class="cd-box cd-pos-t"><b id="cdD">0</b><span>Hari</span></div>
+          <div class="cd-box cd-pos-r"><b id="cdH">0</b><span>Jam</span></div>
+          <div class="cd-box cd-pos-b"><b id="cdM">0</b><span>Menit</span></div>
+          <div class="cd-box cd-pos-l"><b id="cdS">0</b><span>Detik</span></div>
+          </div>
         </div>
         <p class="demo-note rv rv-up" style="margin-bottom:26px">Sabtu, 12 Juni 2027 — Jakarta</p>
 
@@ -407,19 +496,19 @@ body.opened #btnMusic{display:flex}
       <div class="bg-tint">
       <div class="sec-head rv rv-up head-glass">
         <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-shell.webp" alt="">
-        <div class="sec-kicker">GALERI</div>
-        <h2 class="sec-title serif">Jurnal Pelayaran Kami</h2>
+        <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-100 · FRAGMEN & BOTOL DITEMUKAN</div><br><div class="sec-kicker">GALERI</div>
+        <h2 class="sec-title serif">Jurnal Pelayaran Kami</h2><div class="rope-div" aria-hidden="true"></div>
         <p class="sec-sub">Geser ke kanan-kiri menyusuri delapan potret samudra kami — ketuk untuk memperbesar</p>
       </div>
       <div class="gal-rail" id="galGrid">
-        <figure class="rv rv-pop"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-1.webp" alt="Pasangan berjalan di pantai tropis berpohon kelapa" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Pantai Kelapa</span></figcaption></figure>
-        <figure class="rv rv-pop"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-2.webp" alt="Pasangan membawa lentera kuningan di dermaga kayu" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Dermaga Senja</span></figcaption></figure>
-        <figure class="rv rv-pop"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-3.webp" alt="Pasangan tertawa di dek kapal di samping tali-temali dan kompas" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Dek Kapal</span></figcaption></figure>
-        <figure class="rv rv-pop"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-4.webp" alt="Pasangan di pulau kelapa memandang kapal layar" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Pulau Kelapa</span></figcaption></figure>
-        <figure class="rv rv-pop"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-5.webp" alt="Siluet pasangan di dek kapal saat matahari terbenam oranye" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Senja Oranye</span></figcaption></figure>
-        <figure class="rv rv-pop"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-6.webp" alt="Pasangan membaca peta harta karun di pantai dekat peti kayu" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Peta Harta Karun</span></figcaption></figure>
-        <figure class="rv rv-pop"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-7.webp" alt="Pasangan berdansa di dermaga berlampu senja" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Dansa Dermaga</span></figcaption></figure>
-        <figure class="rv rv-pop"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-8.webp" alt="Pasangan memegang botol pesan di tepi laut saat fajar" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Botol Pesan</span></figcaption></figure>
+        <figure class="rv rv-pop frag"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-1.webp" alt="Pasangan berjalan di pantai tropis berpohon kelapa" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Pantai Kelapa</span></figcaption><br><span class="frag-tag">FRAGMEN PETA №1</span></figure>
+        <figure class="rv rv-pop bottle"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-2.webp" alt="Pasangan membawa lentera kuningan di dermaga kayu" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Dermaga Senja</span></figcaption><br><span class="bottle-tag">PESAN DALAM BOTOL №1</span></figure>
+        <figure class="rv rv-pop frag"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-3.webp" alt="Pasangan tertawa di dek kapal di samping tali-temali dan kompas" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Dek Kapal</span></figcaption><br><span class="frag-tag">FRAGMEN PETA №2</span></figure>
+        <figure class="rv rv-pop bottle"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-4.webp" alt="Pasangan di pulau kelapa memandang kapal layar" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Pulau Kelapa</span></figcaption><br><span class="bottle-tag">PESAN DALAM BOTOL №2</span></figure>
+        <figure class="rv rv-pop frag"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-5.webp" alt="Siluet pasangan di dek kapal saat matahari terbenam oranye" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Senja Oranye</span></figcaption><br><span class="frag-tag">FRAGMEN PETA №3</span></figure>
+        <figure class="rv rv-pop bottle"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-6.webp" alt="Pasangan membaca peta harta karun di pantai dekat peti kayu" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Peta Harta Karun</span></figcaption><br><span class="bottle-tag">PESAN DALAM BOTOL №3</span></figure>
+        <figure class="rv rv-pop frag"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-7.webp" alt="Pasangan berdansa di dermaga berlampu senja" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Dansa Dermaga</span></figcaption><br><span class="frag-tag">FRAGMEN PETA №4</span></figure>
+        <figure class="rv rv-pop bottle"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-8.webp" alt="Pasangan memegang botol pesan di tepi laut saat fajar" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Botol Pesan</span></figcaption><br><span class="bottle-tag">PESAN DALAM BOTOL №4</span></figure>
       </div>
       <div class="gal-dots" id="galDots" aria-hidden="true"></div>
       <div class="gal-count" id="galCount">1 / 8</div>
@@ -428,11 +517,12 @@ body.opened #btnMusic{display:flex}
 
     <!-- VIDEO TEASER -->
     <section id="cuplikan">
+      <img class="sec-deco" style="right:10px;top:14px;width:76px;transform:rotate(-8deg)" src="assets/undangya/samudra-bajak/teropong.webp" alt="">
       <div class="bg-tint">
         <div class="sec-head rv rv-up head-glass">
           <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-lantern.webp" alt="">
-          <div class="sec-kicker">CUPLIKAN VIDEO</div>
-          <h2 class="sec-title serif">Teaser Pelayaran</h2>
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-101 · ISYARAT CAHAYA</div><br><div class="sec-kicker">CUPLIKAN VIDEO</div>
+          <h2 class="sec-title serif">Teaser Pelayaran</h2><div class="rope-div" aria-hidden="true"></div>
           <p class="sec-sub">Sepotong kisah kami dalam bingkai bergerak</p>
         </div>
         <div class="rv rv-zoom" style="border:3px solid var(--brass);border-radius:150px 150px 18px 18px;padding:6px;background:linear-gradient(160deg,#fdf3d8,#e9d29a);box-shadow:0 16px 36px rgba(20,50,74,.25)">
@@ -453,8 +543,8 @@ body.opened #btnMusic{display:flex}
       <div class="bg-tint">
         <div class="sec-head rv rv-up head-glass">
           <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-gull.webp" alt="">
-          <div class="sec-kicker">LIVE STREAMING</div>
-          <h2 class="sec-title serif">Siaran dari Pelabuhan</h2>
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-102 · SIARAN DARI PELABUHAN</div><br><div class="sec-kicker">LIVE STREAMING</div>
+          <h2 class="sec-title serif">Siaran dari Pelabuhan</h2><div class="rope-div" aria-hidden="true"></div>
           <p class="sec-sub">Untuk keluarga &amp; sahabat yang berhalangan hadir langsung</p>
         </div>
         <div class="card rv rv-flip" style="text-align:center">
@@ -487,8 +577,8 @@ body.opened #btnMusic{display:flex}
       <div class="bg-tint">
         <div class="sec-head rv rv-up head-glass">
           <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-rings.webp" alt="">
-          <div class="sec-kicker">RSVP &amp; UCAPAN</div>
-          <h2 class="sec-title serif">Dinding Ucapan Awak Kapal</h2>
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-103 · DINDING AWAK KAPAL</div><br><div class="sec-kicker">RSVP &amp; UCAPAN</div>
+          <h2 class="sec-title serif">Dinding Ucapan Awak Kapal</h2><div class="rope-div" aria-hidden="true"></div>
           <p class="sec-sub">Konfirmasi kehadiran &amp; tuliskan doa terbaik Anda</p>
         </div>
         <div class="card rv rv-zoom">
@@ -507,11 +597,12 @@ body.opened #btnMusic{display:flex}
 
     <!-- BUKU TAMU & QR -->
     <section id="bukutamu">
+      <img class="sec-deco coin-spin" style="left:12px;top:16px;width:44px" src="assets/undangya/samudra-bajak/koin-emas.webp" alt="">
       <div class="bg-tint">
         <div class="sec-head rv rv-up head-glass">
           <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-anchor.webp" alt="">
-          <div class="sec-kicker">BUKU TAMU &amp; CHECK-IN</div>
-          <h2 class="sec-title serif">Daftar Naik Kapal</h2>
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-104 · DAFTAR NAIK KAPAL</div><br><div class="sec-kicker">BUKU TAMU &amp; CHECK-IN</div>
+          <h2 class="sec-title serif">Daftar Naik Kapal</h2><div class="rope-div" aria-hidden="true"></div>
           <p class="sec-sub">Pindai kode QR ini atau isi buku tamu saat tiba di lokasi</p>
         </div>
         <div class="card rv rv-drop" style="text-align:center">
@@ -535,8 +626,8 @@ body.opened #btnMusic{display:flex}
       <div class="bg-tint">
       <div class="sec-head rv rv-up head-glass">
         <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-chest.webp" alt="">
-        <div class="sec-kicker">AMPLOP DIGITAL</div>
-        <h2 class="sec-title serif">Peti Tanda Kasih</h2>
+        <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-105 · PETI TANDA KASIH</div><br><div class="sec-kicker">AMPLOP DIGITAL</div>
+        <h2 class="sec-title serif">Peti Tanda Kasih</h2><div class="rope-div" aria-hidden="true"></div>
         <p class="sec-sub">Doa restu Anda adalah harta karun terindah. Bagi yang berkenan memberi tanda kasih:</p>
       </div>
       <div class="card acc-card rv rv-left">
@@ -562,11 +653,12 @@ body.opened #btnMusic{display:flex}
 
     <!-- TURUT MENGUNDANG -->
     <section id="turut">
+      <img class="sec-deco lantern-hang" style="right:12px;top:0;width:40px" src="assets/undangya/samudra-bajak/tali-simpul.webp" alt="">
       <div class="bg-tint">
         <div class="sec-head rv rv-up head-glass">
           <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-compass.webp" alt="">
-          <div class="sec-kicker">TURUT MENGUNDANG</div>
-          <h2 class="sec-title serif">Turut Mengundang</h2>
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-106 · ARMADA KELUARGA</div><br><div class="sec-kicker">TURUT MENGUNDANG</div>
+          <h2 class="sec-title serif">Turut Mengundang</h2><div class="rope-div" aria-hidden="true"></div>
           <p class="sec-sub">Segenap keluarga besar kedua mempelai</p>
         </div>
         <div class="turut-grid">
@@ -580,7 +672,7 @@ body.opened #btnMusic{display:flex}
     <!-- PENUTUP -->
     <section id="penutup" style="text-align:center">
       <div class="bg-tint panel-glass rv rv-zoom" style="padding:30px 22px 26px">
-        <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-wheel.webp" alt="" style="width:74px;height:74px">
+        <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-107 · BERLAYAR SELAMANYA</div><br><img class="sec-icon" src="assets/undangya/samudra-bajak/icon-wheel.webp" alt="" style="width:74px;height:74px">
         <p style="font-size:14.5px;line-height:1.8;color:#43586a;max-width:320px;margin:6px auto 0">Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua mempelai.</p>
         <p style="margin-top:16px;font-size:12px;letter-spacing:.3em;color:var(--sunset2);font-weight:700">KAMI YANG BERBAHAGIA</p>
         <div class="penutup-names script" style="margin-top:6px">Meyzsa &amp; Fahrezzi</div>
